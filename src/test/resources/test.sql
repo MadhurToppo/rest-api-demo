@@ -1,0 +1,2 @@
+insert into user (user_id, user_name, email, phone, gender) values (1001, 'Madhur', 'toppo.madhur@gmail.com', '8746593846', 'Male');
+insert into user (user_id, user_name, email, phone, gender) values (1002, 'Shelly', 'lewis.shelly@gmail.com', '6443454821', 'Female');

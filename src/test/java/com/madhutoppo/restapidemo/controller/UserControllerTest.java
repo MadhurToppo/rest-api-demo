@@ -35,7 +35,7 @@ class UserControllerTest {
 
         // Mock the data returned by the user service class
         User user = new User();
-        user.setName("Madhur");
+        user.setUserName("Madhur");
         user.setEmail("toppo.madhur@gmail.com");
         user.setPhone("9874287467");
         user.setGender("Male");
@@ -46,7 +46,7 @@ class UserControllerTest {
         mockMvc.perform(MockMvcRequestBuilders.get("/users/12"))
                 .andDo(print())
                 .andExpect(status().isOk())
-                .andExpect(MockMvcResultMatchers.jsonPath("$.name").value("Madhur"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.userName").value("Madhur"))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.email").value("toppo.madhur@gmail.com"))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.phone").value("9874287467"))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.gender").value("Male"));
@@ -58,7 +58,7 @@ class UserControllerTest {
         // Mock the user data that we have to save
         User user = new User();
         user.setUserId(1);
-        user.setName("Mukul");
+        user.setUserName("Mukul");
         user.setEmail("toppo.mukul@gmail.com");
         user.setPhone("7623858937");
         user.setGender("Male");
@@ -73,7 +73,7 @@ class UserControllerTest {
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isCreated())
                 .andExpect(MockMvcResultMatchers.jsonPath("$.userId").exists())
-                .andExpect(MockMvcResultMatchers.jsonPath("$.name").value("Mukul"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.userName").value("Mukul"))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.email").value("toppo.mukul@gmail.com"))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.phone").value("7623858937"))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.gender").value("Male"));
